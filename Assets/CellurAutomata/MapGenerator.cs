@@ -38,7 +38,8 @@ public class MapGenerator : MonoBehaviour
 		}
 	}
 
-
+	//map[x,y] == 1 -> Wall
+	//map[x,y] == 0 -> Not Wall
 	void RandomFillMap ()
 	{
 		if (useRandomSeed) {
@@ -98,8 +99,8 @@ public class MapGenerator : MonoBehaviour
 			for (int x = 0; x < width; x++) {
 				for (int y = 0; y < height; y++) {
 					Gizmos.color = (map [x, y] == 1) ? Color.blue : Color.red;
-					Vector3 pos = new Vector3 (-width / 2 + x + .5f, 0, -height / 2 + y + .5f);
-					Gizmos.DrawCube (pos, Vector3.one);
+					Vector3 position = new Vector3 (-width / 2 + x + 0.5f, 0, -height / 2 + y + 0.5f);
+					Gizmos.DrawCube (position, Vector3.one);
 				}
 			}
 		}
