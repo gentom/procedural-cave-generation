@@ -1,0 +1,1 @@
+You can see the result in Scene window of Unity(not in Game window).
